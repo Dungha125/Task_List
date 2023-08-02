@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main
+{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(357deg, rgba(1,42,133,1) 0%, rgba(30,71,95,1) 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+} 
+.center
+{
+  width: 400px;
+  height: 500px;
+  font-family: sans-serif;
+  background: radial-gradient(circle, rgb(190, 231, 255) 0%, rgb(190, 211, 255) 76%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(226, 253, 255, 0.903);
+}
+.center h1
+{
+  text-align: center;
+}
+.inputarea
+{
+  margin: 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.inputarea input
+{
+  width: 80%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border:none;
+  box-shadow: 0px 0px 5px rgb(67, 82, 106);
+  padding-left: 10px;
+}
+.inputarea .btninput
+{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(46, 125, 24);
+  margin-left: 10px;
+  font-size: 30px;
+  color: aliceblue;
+  cursor: pointer;
+}
+.inputarea .btninput:hover
+{
+  background-color: rgb(43, 199, 0);
+  border: solid 3px rgb(14, 128, 58);
 }
 
-.App-link {
-  color: #61dafb;
+.List
+{
+  width: 380px;
+  height: max-content;
+  margin: 20px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listItem
+{
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(67, 82, 106);
+  background-color: aliceblue;
+  font-size: 20px;
+  text-indent: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.deleteicon
+{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.deleteicon i
+{
+  color: #1d0c5a;
+}
+.deleteicon i:hover
+{
+  color: #c80000;
+  cursor: pointer;
+}
+
+.name
+{
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  height: 20px;
+  color:aliceblue;
 }
