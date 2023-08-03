@@ -26,8 +26,19 @@ function App() {
             )
           })}
         </div>
-        
       </div>
+      <ul className="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
       <div className='name'>@Create by Dungha</div>
     </div>
   )
