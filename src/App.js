@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./App.css"
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList';
 function App() {
   const [listTodo, setListTodo] = useState([]);
-  let addList = (inputText) =>{
+
+  useEffect(() => {
+    // Lấy dữ liệu từ localStorage khi trang được tải lại
+    const storedListTodo = localStorage.getItem('listTodo');
+    if (storedListTodo) {
+      setListTodo(JSON.parse(storedListTodo));
+    }
+  }, []); // Chạy chỉ một lần khi trang được tải
+
+  useEffect(() => {
+    // Lưu dữ liệu vào localStorage mỗi khi có thay đổi trong listTodo
+    localStorage.setItem('listTodo', JSON.stringify(listTodo));
+  }, [listTodo]); // Chạy mỗi khi listTodo thay đổi
+
+
+  const addList = (inputText) =>{
     if(inputText !== '')
     setListTodo([...listTodo,inputText]);
   }
+  
   //xoa task
   const deleteListItem = (key) =>
   {
@@ -25,7 +41,7 @@ function App() {
   return (
     <div className='main'>
       <div className='center'>
-        <h1>Todo LIST</h1>
+        <h1>Task LIST</h1>
         <TodoInput addList={addList}/>
         <div className='List'>
           {listTodo.map((listItem,i)=>{
