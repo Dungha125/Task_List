@@ -8,12 +8,20 @@ function App() {
     if(inputText !== '')
     setListTodo([...listTodo,inputText]);
   }
+  //xoa task
   const deleteListItem = (key) =>
   {
     let newListTodo = [...listTodo];
     newListTodo.splice(key,1)
     setListTodo([...newListTodo])
   }
+  //edit task
+  const editItem = (index, editedText) => {
+    let newListTodo = [...listTodo];
+    newListTodo[index] = editedText;
+    setListTodo([...newListTodo]);
+  }
+
   return (
     <div className='main'>
       <div className='center'>
@@ -22,7 +30,7 @@ function App() {
         <div className='List'>
           {listTodo.map((listItem,i)=>{
             return (
-              <TodoList key={i} index={i}  item={listItem} deleteItem={deleteListItem}/>
+              <TodoList key={i} index={i}  item={listItem} deleteItem={deleteListItem} editItem={editItem}/>
             )
           })}
         </div>
